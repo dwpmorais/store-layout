@@ -1,0 +1,187 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "title": "comma",
+      "img": "/images/brands/comma.png"
+    },
+    {
+      "id": 2,
+      "title": "melissa",
+      "img": "/images/brands/melissa.png"
+    },
+    {
+      "id": 3,
+      "title": "forever",
+      "img": "/images/brands/forever.png"
+    },
+    {
+      "id": 4,
+      "title": "zara",
+      "img": "/images/brands/zara.png"
+    },
+    {
+      "id": 5,
+      "title": "annTaylor",
+      "img": "/images/brands/annTaylor.png"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "price": "R$ 500,00",
+      "name": "Faux Suede Mini Skirt",
+      "description": "A faux suede mini skirt featuring exposed button-front closures and panel seam construction.",
+      "img": "/images/product/demo1.png",
+      "url": "/",
+      "colors": [
+        {
+          "color": "#deac71",
+          "url": "/"
+        },
+        {
+          "color": "#d37164",
+          "url": "/"
+        },
+        {
+          "color": "#6497d3",
+          "url": "/"
+        },
+        {
+          "color": "#3c3b79",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "price": "R$ 320,00",
+      "name": "Ruched Rose Print Mini Skirt",
+      "description": "A satin mini skirt featuring an allover floral print, ruched side with self-tie closure, concealed back zipper, and a flounce hem.",
+      "img": "/images/product/demo2.png",
+      "url": "/",
+      "colors": [
+        {
+          "color": "#1c1a19",
+          "url": "/"
+        },
+        {
+          "color": "#d84e4a",
+          "url": "/"
+        },
+        {
+          "color": "#cfc9b0",
+          "url": "/"
+        },
+        {
+          "color": "#eae9e5",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "price": "R$ 500,00",
+      "name": "Faux Suede Mini Skirt",
+      "description": "A faux suede mini skirt featuring exposed button-front closures and panel seam construction.",
+      "img": "/images/product/demo1.png",
+      "url": "/",
+      "colors": [
+        {
+          "color": "#deac71",
+          "url": "/"
+        },
+        {
+          "color": "#d37164",
+          "url": "/"
+        },
+        {
+          "color": "#6497d3",
+          "url": "/"
+        },
+        {
+          "color": "#3c3b79",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "price": "R$ 320,00",
+      "name": "Ruched Rose Print Mini Skirt",
+      "description": "A satin mini skirt featuring an allover floral print, ruched side with self-tie closure, concealed back zipper, and a flounce hem.",
+      "img": "/images/product/demo2.png",
+      "url": "/",
+      "colors": [
+        {
+          "color": "#1c1a19",
+          "url": "/"
+        },
+        {
+          "color": "#d84e4a",
+          "url": "/"
+        },
+        {
+          "color": "#cfc9b0",
+          "url": "/"
+        },
+        {
+          "color": "#eae9e5",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "price": "R$ 500,00",
+      "name": "Faux Suede Mini Skirt",
+      "description": "A faux suede mini skirt featuring exposed button-front closures and panel seam construction.",
+      "img": "/images/product/demo1.png",
+      "url": "/",
+      "colors": [
+        {
+          "color": "#deac71",
+          "url": "/"
+        },
+        {
+          "color": "#d37164",
+          "url": "/"
+        },
+        {
+          "color": "#6497d3",
+          "url": "/"
+        },
+        {
+          "color": "#3c3b79",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "price": "R$ 320,00",
+      "name": "Ruched Rose Print Mini Skirt",
+      "description": "A satin mini skirt featuring an allover floral print, ruched side with self-tie closure, concealed back zipper, and a flounce hem.",
+      "img": "/images/product/demo2.png",
+      "url": "/",
+      "colors": [
+        {
+          "color": "#1c1a19",
+          "url": "/"
+        },
+        {
+          "color": "#d84e4a",
+          "url": "/"
+        },
+        {
+          "color": "#cfc9b0",
+          "url": "/"
+        },
+        {
+          "color": "#eae9e5",
+          "url": "/"
+        }
+      ]
+    }
+  ]
+}
