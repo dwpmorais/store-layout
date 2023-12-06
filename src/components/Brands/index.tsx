@@ -17,23 +17,24 @@ const Brands = () => {
     dots: false,
     arrows: false,
     infinite: false,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1025,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+          variableWidth: true,
         },
       },
       {
@@ -42,7 +43,6 @@ const Brands = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          centerMode: true,
           variableWidth: true,
         },
       },
@@ -52,7 +52,7 @@ const Brands = () => {
   return (
     <div className="carousel-brands">
       <div className="container">
-        <h4>Marcas Parceiras</h4>
+        <h4 className="title-section">Marcas Parceiras</h4>
 
         <Slider {...settings}>
           {

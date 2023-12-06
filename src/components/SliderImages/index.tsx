@@ -26,33 +26,32 @@ const SliderImages = () => {
     dots: true,
     arrows: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
 
   return (
-    <div className="carousel">
+    <div className="slider-main">
       <Slider {...settings}>
-        <a className="carousel-item__container" href="/">
+        <div className="slider-main__item" >
           <img src={isMobile ? image : imageMobile} alt="Title"/>
-          <div className="carousel-item__container-text">
+          <div className="slider-main__item-text container">
             <h1>Promoções de Outono</h1>
-            <p>Confiras os melhores looks para combinar com você nesse
-              Outono</p>
-            <button>Conferir</button>
+            <p>Confiras os melhores looks para combinar com você nesse Outono</p>
+            <button type="button">Conferir</button>
           </div>
-        </a>
+        </div>
 
-        <a className="carousel-item__container" href="/">
+        <div className="slider-main__item" >
           <img src={isMobile ? image : imageMobile} alt="Title"/>
-
-          <div className="carousel-item__container-text">
+          <div className="slider-main__item-text container">
             <h1>Promoções de Outono 2</h1>
-            <p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.</p>
-            <button>Conferir</button>
+            <p>Confiras os melhores looks para combinar com você nesse Outono (2)</p>
+            <button type="button">Conferir</button>
           </div>
-        </a>
+        </div>
+
       </Slider>
     </div>
   )

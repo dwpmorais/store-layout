@@ -1,9 +1,30 @@
 .carousel-brands {
-  h4 {
+  .title-section {
     color: var(--secoundary);
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
-    margin: 74px 0 17px 0;
+    margin: 40px 0 25px;
+
+    @media (min-width: 1024px) {
+      margin: 74px 0 17px;
+      font-size: 32px;
+    }
+  }
+
+  .slick-slide {
+    margin: 0 10px;
+
+    @media (min-width: 1024px) {
+      margin: 0;
+    }
+  }
+
+  .slick-list {
+    margin-right: -30px;
+
+    @media (min-width: 1024px) {
+      margin-right: 0;
+    }
   }
 }

@@ -6,6 +6,21 @@ import './style.scss'
 
 import data from '../../data.json'
 
+interface Product {
+  id: number;
+  price: string;
+  name: string;
+  description: string;
+  img: string;
+  url: string;
+  colors: Color[];
+}
+
+interface Color {
+  color: string;
+  url: string;
+}
+
 const Shelf = () => {
   const settings = {
     dots: false,
@@ -27,60 +42,54 @@ const Shelf = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 560,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: true,
-          arrows: false,
+          variableWidth: true,
         },
       },
     ],
   }
 
   return (
-    <div className="carousel-product-cards">
-      <h3>As Mais Pedidas</h3>
+    <div className="shelf-products">
+      <h3 className="title-section">As Mais Pedidas</h3>
+
       <Slider {...settings}>
-        {data &&
-          data?.products.map((e: any) => {
+        {
+          data &&
+          data?.products.map((item: Product) => {
             return (
-              <div className="carousel-product-cards__container" key={e.id}>
-                <img src={e.img} alt={e.name}/>
-                <div className="carousel-product-cards__container-text">
-                  <ul className="carousel-product-cards__container-colors">
-                    {e.colors &&
-                      e.colors.map((color: any, index: number) => {
+              <div className="shelf-products__container" key={item.id}>
+                <img src={item.img} alt={item.name}/>
+                <div className="shelf-products__container-text">
+                  <ul className="shelf-products__container-colors">
+                    {item?.colors &&
+                      item?.colors.map((color: Color, index: number) => {
                         return (
-                          <a
-                            className="carousel-product-cards__link"
-                            href={color.url}
-                          >
-                            <li
-                              style={{
-                                background: `${color.color}`,
-                                height: '27px',
-                                width: '27px',
-                              }}
-                            ></li>
+                          <a className="shelf-products__link" href={color.url} key={index}>
+                            <li className="product-sku-color" style={{ background: `${color.color}`}}></li>
                           </a>
                         )
                       })}
                   </ul>
 
-                  <p className="price">{e.price}</p>
-                  <h4>{e.name}</h4>
-                  <p className="description">{e.description}</p>
-                  <a className="buy-button" href={e.url}>
+                  <p className="product-price">{item.price}</p>
+                  <h4 className="product-title">{item.name}</h4>
+                  <p className="product-description">{item.description}</p>
+                  <a className="product-buy-button" href={item.url}>
                     Adicionar
                   </a>
                 </div>
               </div>
             )
-          })}
+          })
+        }
       </Slider>
     </div>
   )

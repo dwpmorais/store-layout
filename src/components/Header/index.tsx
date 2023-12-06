@@ -3,7 +3,7 @@ import "./style.scss";
 
 import { Menu } from '../Menu'
 import Logo from '../../assets/logo-maeztra-novo.png'
-import { Account } from './Account/Account'
+// import { Account } from './Account/Account'
 
 const Header = () => {
   return (

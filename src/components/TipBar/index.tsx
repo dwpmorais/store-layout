@@ -1,82 +1,86 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./CarouselBenefits.scss";
-import { benefits } from "./benefits";
-import PerkBar from "./PerkBar";
+import "./style.scss";
+import data from '../../data.json'
 
-const CarouselBenefits = () => {
-  const [benefitsDevice, setBenefitsDevice] = useState(
-    window.innerWidth <= 1024
-  );
-  useEffect(() => {
-    const handleResize = () => {
-      setBenefitsDevice(window.innerWidth <= 1024);
-    };
+interface tipBarItem {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+const TipBar = () => {
   const settings = {
     dots: false,
     arrows: false,
-    infinite: true,
-    speed: 500,
-    centerMode: true,
-    variableWidth: true,
+    infinite: false,
+    speed: 1000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1025,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
+          variableWidth: true,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 560,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
+          variableWidth: true,
         },
       },
     ],
   };
+
   return (
-    <div className="carousel-benefits">
-      <h4>Por que comprar na Maeztra?</h4>
-      {benefitsDevice ? (
+    <div className="tip-bar">
+      <div className="container">
+        <h4 className="title-section">Por que comprar na Maeztra?</h4>
+
         <Slider {...settings}>
-          {benefits &&
-            benefits.map((e: any) => {
+          {
+            data &&
+            data?.benefits.map((item: tipBarItem) => {
               return (
-                <div>
-                  <div className="carousel-benefits-item__container carousel-benefits-item__container-mobile">
-                    <img src={e.icon} alt={e.title} />
-                    <div className="carousel-benefits-item__container-text">
-                      <h5>{e.title}</h5>
-                      <p>{e.description}</p>
+                <div className="tip-bar__item" key={item.id}>
+                  <div className="tip-bar__item-container">
+                    <img src={item.icon} alt={item.title} />
+
+                    <div className="tip-bar__text">
+                      <h5 className="tip-bar-title">
+                        {item.title}
+                      </h5>
+                      <p className="tip-bar-description">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              )
+            })
+          }
         </Slider>
-      ) : (
-        <PerkBar />
-      )}
+      </div>
     </div>
   );
 };
 
-export default CarouselBenefits;
+export default TipBar;

@@ -1,5 +1,5 @@
-.carousel-item {
-  &__container {
+.slider-main {
+  &__item {
     position: relative;
     width: 100%;
 
@@ -8,75 +8,89 @@
     }
   }
 
-  &__container-text {
+  &__item-text {
     position: absolute;
-    top: 151px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 66%;
+    transform: translate(-50%, -50%);
+    padding: 0 60px;
+
+    @media (min-width: 1360px) {
+      transform: translate(-50%);
+      padding: 0 160px;
+    }
 
     @media (min-width: 1024px) {
-      width: 62%;
-      top: 63px;
+      top: 151px;
     }
 
     h1 {
       color: #fff;
-      font-family: Montserrat;
-      font-size: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 30px;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      margin-bottom: 40px;
-      @media (max-width: 1024px) {
-        font-size: 30px;
+      margin-bottom: 24px;
+
+      @media (min-width: 1024px) {
+        font-size: 40px;
+        margin-bottom: 40px;
       }
     }
 
     p {
       color: #fff;
-      font-family: Montserrat;
-      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
       font-weight: 400;
-      max-width: 467px;
-      margin-bottom: 32px;
-      @media (max-width: 1024px) {
-        font-size: 14px;
-        max-width: unset;
+      margin-bottom: 16px;
+
+      @media (min-width: 1024px) {
+        font-size: 20px;
+        max-width: 467px;
+        margin-bottom: 32px;
       }
     }
 
     button {
-      font-family: Montserrat;
-      border-radius: 10px;
-      background: #faa500;
+      font-family: 'Montserrat', sans-serif;
+      border-radius: 4px;
+      background: var(--primary);
       color: #fff;
-      font-size: 16px;
       font-weight: 700;
-      width: 128px;
-      height: 48px;
       border: none;
       cursor: pointer;
-      @media (max-width: 1024px) {
-        width: 76px;
-        height: 28px;
-        font-size: 14px;
+      width: 76px;
+      height: 28px;
+      font-size: 14px;
+      transition: 0.3s all;
+
+      &:hover {
+        background: var(--primary-hover);
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 16px;
+        width: 128px;
+        height: 48px;
+        border-radius: 10px;
       }
     }
   }
-}
 
-.carousel {
   .slick-arrow {
-    background-image: url(../../assets/_icon-prev.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+    width: 20px;
     height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='32' viewBox='0 0 20 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.514971 14.7561L14.7568 0.514971C15.4434 -0.171657 16.5573 -0.171657 17.2439 0.514971L18.9052 2.17621C19.5911 2.86211 19.5918 3.97302 18.9081 4.66038L7.62087 15.9996L18.9074 27.3396C19.5918 28.027 19.5903 29.1379 18.9044 29.8238L17.2432 31.485C16.5566 32.1717 15.4427 32.1717 14.7561 31.485L0.514971 17.2432C-0.171657 16.5566 -0.171657 15.4427 0.514971 14.7561Z' fill='%23353535'/%3E%3C/svg%3E%0A");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 1;
   }
 
   .slick-next {
-    right: 10%;
+    right: 28px;
     transform: translateY(-50%) rotate(180deg);
     cursor: pointer;
 
@@ -86,7 +100,7 @@
   }
 
   .slick-prev {
-    left: 10%;
+    left: 28px;
     cursor: pointer;
 
     &::before {
@@ -95,21 +109,26 @@
   }
 
   .slick-dots {
-    bottom: 24px;
+    bottom: 16px;
+
+    @media (min-width: 1024px) {
+      bottom: 24px;
+    }
 
     li {
       margin: 0 8px;
     }
 
     li button {
-      width: 16px;
-      height: 16px;
-      border: 1px solid #faa500;
+      width: 8px;
+      height: 8px;
+      border: 1px solid var(--primary);
       border-radius: 50%;
       cursor: pointer;
-      @media (max-width: 1024px) {
-        width: 8px;
-        height: 8px;
+
+      @media (min-width: 1024px) {
+        width: 16px;
+        height: 16px;
       }
     }
 
@@ -118,7 +137,7 @@
     }
 
     li.slick-active button {
-      background: #faa500;
+      background: var(--primary);
     }
   }
 }

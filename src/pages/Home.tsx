@@ -6,7 +6,7 @@ import SliderImages from "../components/SliderImages/";
 import Shelf from "../components/Shelf/";
 import TipBar from "../components/TipBar/";
 import Brands from "../components/Brands/";
-import BannerFooter from "../components/SliderImages/BannerFooter";
+// import BannerFooter from "../components/SliderImages/BannerFooter";
 
 const Home = () => {
   return (

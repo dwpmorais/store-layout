@@ -16,12 +16,13 @@
   --neutral-500: #EFEFEF;
   --gray-900: #353535;
   --white: #ffffff;
+  --black: #00000;
 }
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -34,7 +35,9 @@
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1240px;
+    max-width: 1160px;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
