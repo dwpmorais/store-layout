@@ -26,13 +26,21 @@
 
   @media (min-width: 1024px) {
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.08);
-    z-index: 1;
+    position: relative;
   }
 
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .icon-menu-mobile {
+    display: block;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
   }
 
   .header-logo {
@@ -44,12 +52,16 @@
 
   .search-bar {
     &__form {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       height: 40px;
       max-width: 791px;
       width: 100%;
+
+      @media (min-width: 1024px) {
+        display: flex;
+      }
 
       label {
         height: 100%;
@@ -94,6 +106,16 @@
       &:hover {
         background: var(--primary-hover);
       }
+    }
+  }
+
+  .icon-search-mobile,
+  .icon-cart-mobile,
+  .icon-menu-mobile {
+    display: block;
+
+    @media (min-width: 1024px) {
+      display: none;
     }
   }
 }

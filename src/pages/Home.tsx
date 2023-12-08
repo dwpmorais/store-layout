@@ -1,27 +1,35 @@
-import React from "react";
+import React, { useState } from 'react'
 
-import { Header } from "../components/Header/";
-import { Footer } from "../components/Footer/Footer";
-import SliderImages from "../components/SliderImages/";
-import Shelf from "../components/Shelf/";
-import TipBar from "../components/TipBar/";
-import Brands from "../components/Brands/";
-// import BannerFooter from "../components/SliderImages/BannerFooter";
+import Brands from '../components/Brands'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import HeroSection from '../components/HeroSection'
+import Shelf from '../components/Shelf'
+import SliderImages from '../components/SliderImages'
+import TipBar from '../components/TipBar'
+import Modal from '../components/Modal'
 
 const Home = () => {
+  const [modalOpen, setModalOpen] = useState(true);
+
+  const closeModal = () => {
+    setModalOpen(false);
+  }
+
   return (
     <>
+      <Modal isOpen={modalOpen} onClose={closeModal} />
       <Header/>
       <main>
         <SliderImages/>
         <TipBar/>
         <Brands/>
         <Shelf/>
-        {/*<BannerFooter/>*/}
+        <HeroSection/>
       </main>
       <Footer/>
     </>
   )
 }
 
-export { Home };
+export default Home

@@ -12,11 +12,13 @@
   --primary: #FAA500;
   --primary-hover: #e89a01;
   --secoundary: #353535;
+  --gray: #787D83;
+  --gray-500: #464B54;
   --neutral: #FAFAFA;
   --neutral-500: #EFEFEF;
-  --gray-900: #353535;
+  --neutral-900: #C4C4C4;
   --white: #ffffff;
-  --black: #00000;
+  --black: #000000;
 }
 
 .container {
@@ -47,13 +49,10 @@
   }
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 main {
-  background: var(--neutral);
+  background: var(--white);
+
+  @media (min-width: 992px) {
+    background: var(--neutral);
+  }
 }

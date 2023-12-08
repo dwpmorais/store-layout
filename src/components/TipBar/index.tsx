@@ -80,7 +80,7 @@ const TipBar = () => {
         </Slider>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TipBar;
+export default TipBar

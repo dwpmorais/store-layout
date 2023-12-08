@@ -35,6 +35,7 @@ const Shelf = () => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
@@ -42,7 +43,8 @@ const Shelf = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
+          variableWidth: true,
+          arrows: false,
         },
       },
       {
@@ -51,6 +53,7 @@ const Shelf = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           variableWidth: true,
+          arrows: false,
         },
       },
     ],
@@ -58,39 +61,41 @@ const Shelf = () => {
 
   return (
     <div className="shelf-products">
-      <h3 className="title-section">As Mais Pedidas</h3>
+      <div className="container">
+        <h3 className="title-section">As Mais Pedidas</h3>
 
-      <Slider {...settings}>
-        {
-          data &&
-          data?.products.map((item: Product) => {
-            return (
-              <div className="shelf-products__container" key={item.id}>
-                <img src={item.img} alt={item.name}/>
-                <div className="shelf-products__container-text">
-                  <ul className="shelf-products__container-colors">
+        <Slider {...settings}>
+          {
+            data &&
+            data?.products.map((item: Product) => {
+              return (
+                <div className="shelf-products-item" key={item.id}>
+                  <img src={item.img} alt={item.name}/>
+                  <ul className="products-sku">
                     {item?.colors &&
                       item?.colors.map((color: Color, index: number) => {
                         return (
-                          <a className="shelf-products__link" href={color.url} key={index}>
+                          <a href={color.url} key={index}>
                             <li className="product-sku-color" style={{ background: `${color.color}`}}></li>
                           </a>
                         )
                       })}
                   </ul>
 
-                  <p className="product-price">{item.price}</p>
-                  <h4 className="product-title">{item.name}</h4>
-                  <p className="product-description">{item.description}</p>
-                  <a className="product-buy-button" href={item.url}>
-                    Adicionar
-                  </a>
+                  <div className="shelf-products-infos">
+                    <span className="product-price">{item.price}</span>
+                    <h4 className="product-title">{item.name}</h4>
+                    <span className="product-description">{item.description}</span>
+                    <a className="product-buy-button" href={item.url}>
+                      Adicionar
+                    </a>
+                  </div>
                 </div>
-              </div>
-            )
-          })
-        }
-      </Slider>
+              )
+            })
+          }
+        </Slider>
+      </div>
     </div>
   )
 }

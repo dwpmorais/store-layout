@@ -1,9 +1,10 @@
 import React from "react";
 import "./style.scss";
 
-import { Menu } from '../Menu'
-import Logo from '../../assets/logo-maeztra-novo.png'
-// import { Account } from './Account/Account'
+import Menu from '../Menu'
+import Logo from './Logo'
+import Search from './Search'
+import Widgets from './Widgets'
 
 const Header = () => {
   return (
@@ -17,33 +18,40 @@ const Header = () => {
       <div className="header-row-1">
         <div className="container">
           <div className="header-row-1__wrapper">
-            <a href="/" title="Home" className="header-logo">
-              <img src={Logo} alt="Logo Maeztra"/>
-            </a>
-            <form className="search-bar__form">
-              <label htmlFor="searchBar">
-                <input
-                  type="text"
-                  placeholder="O Que Você Busca?"
-                  className="search-bar__input"
-                />
-              </label>
+            <div className="icon-menu-mobile">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.0625 15.0625H4.9375C4.41972 15.0625 4 15.4822 4 16C4 16.5178 4.41972 16.9375 4.9375 16.9375H27.0625C27.5803 16.9375 28 16.5178 28 16C28 15.4822 27.5803 15.0625 27.0625 15.0625Z" fill="black"/>
+                <path d="M27.0625 7.5625H4.9375C4.41972 7.5625 4 7.98222 4 8.5C4 9.01778 4.41972 9.4375 4.9375 9.4375H27.0625C27.5803 9.4375 28 9.01778 28 8.5C28 7.98222 27.5803 7.5625 27.0625 7.5625Z" fill="black"/>
+                <path d="M27.0625 22.5625H4.9375C4.41972 22.5625 4 22.9822 4 23.5C4 24.0178 4.41972 24.4375 4.9375 24.4375H27.0625C27.5803 24.4375 28 24.0178 28 23.5C28 22.9822 27.5803 22.5625 27.0625 22.5625Z" fill="black"/>
+              </svg>
+            </div>
 
-              <button className="search-bar__btn" type="submit">
-                Buscar
-              </button>
-            </form>
+            <Logo />
+            <Search />
+            <Widgets />
+
+            <div className="icon-search-mobile">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27.8535 26.4395L20.8817 19.4677C22.204 17.8351 23 15.7597 23 13.5C23 8.26175 18.7383 4 13.5 4C8.2617 4 4 8.26175 4 13.5C4 18.7383 8.26175 23.0001 13.5 23.0001C15.7597 23.0001 17.8351 22.204 19.4677 20.8817L26.4395 27.8536C26.6348 28.0488 26.9513 28.0488 27.1467 27.8536L27.8536 27.1466C28.0488 26.9513 28.0488 26.6347 27.8535 26.4395ZM13.5 21.0001C9.3643 21.0001 6.00002 17.6358 6.00002 13.5C6.00002 9.3643 9.3643 6.00002 13.5 6.00002C17.6358 6.00002 21.0001 9.3643 21.0001 13.5C21.0001 17.6358 17.6358 21.0001 13.5 21.0001Z" fill="black"/>
+              </svg>
+            </div>
+
+            <div className="icon-cart-mobile">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25.7682 27.2112L23.9441 9.84052C23.9059 9.47687 23.5993 9.20074 23.2337 9.20074H19.8052V8.41907C19.8052 5.98248 17.8227 4 15.3861 4C12.9494 4 10.9669 5.98248 10.9669 8.41907V9.20074H7.53842C7.17276 9.20074 6.86624 9.47687 6.82797 9.84052L5.00388 27.2112C4.98282 27.4124 5.04819 27.6133 5.1835 27.7638C5.319 27.9141 5.512 28 5.71433 28H25.0576C25.2601 28 25.4531 27.9141 25.5884 27.7638C25.7241 27.6133 25.7893 27.4124 25.7682 27.2112ZM12.3955 8.41907C12.3955 6.7702 13.7371 5.42859 15.3861 5.42859C17.035 5.42859 18.3766 6.7702 18.3766 8.41907V9.20074H12.3955V8.41907ZM6.50754 26.5714L8.18167 10.6293H10.9669V12.2035C10.9669 12.5979 11.2868 12.9178 11.6812 12.9178C12.0756 12.9178 12.3955 12.5979 12.3955 12.2035V10.6293H18.3766V12.2035C18.3766 12.5979 18.6965 12.9178 19.0909 12.9178C19.4853 12.9178 19.8052 12.5979 19.8052 12.2035V10.6293H22.5904L24.2646 26.5714H6.50754Z" fill="black"/>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="header-row-2">
         <div className="container">
-          <Menu />
+          <Menu/>
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export { Header };
+export default Header

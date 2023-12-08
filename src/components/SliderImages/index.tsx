@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -31,27 +31,24 @@ const SliderImages = () => {
     slidesToScroll: 1,
   }
 
+  const ItemSlide: React.FC = () => {
+    return (
+      <div className="slider-main__item" >
+        <img src={isMobile ? image : imageMobile} alt="Title"/>
+        <div className="slider-main__item-text container">
+          <h1>Promoções de Outono</h1>
+          <p>Confiras os melhores looks para combinar com você nesse Outono</p>
+          <button type="button">Conferir</button>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="slider-main">
       <Slider {...settings}>
-        <div className="slider-main__item" >
-          <img src={isMobile ? image : imageMobile} alt="Title"/>
-          <div className="slider-main__item-text container">
-            <h1>Promoções de Outono</h1>
-            <p>Confiras os melhores looks para combinar com você nesse Outono</p>
-            <button type="button">Conferir</button>
-          </div>
-        </div>
-
-        <div className="slider-main__item" >
-          <img src={isMobile ? image : imageMobile} alt="Title"/>
-          <div className="slider-main__item-text container">
-            <h1>Promoções de Outono 2</h1>
-            <p>Confiras os melhores looks para combinar com você nesse Outono (2)</p>
-            <button type="button">Conferir</button>
-          </div>
-        </div>
-
+        <ItemSlide />
+        <ItemSlide />
       </Slider>
     </div>
   )
